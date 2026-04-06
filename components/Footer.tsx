@@ -7,17 +7,25 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 
-const socialLogos: Record<string, string> = {
-  instagram: "/instagram.svg",
-  tiktok: "/tiktok.svg",
-  youtube: "/youtube.svg",
-  twitch: "/twitch.svg",
+import instagramSvg from "@/public/instagram.svg";
+import tiktokSvg from "@/public/tiktok.svg";
+import youtubeSvg from "@/public/youtube.svg";
+import twitchSvg from "@/public/twitch.svg";
+import spotifySvg from "@/public/spotify.svg";
+import appleMusicSvg from "@/public/apple-music.svg";
+import deezerSvg from "@/public/deezer.svg";
+
+const socialLogos: Record<string, typeof instagramSvg> = {
+  instagram: instagramSvg,
+  tiktok: tiktokSvg,
+  youtube: youtubeSvg,
+  twitch: twitchSvg,
 };
 
 const streamingPlatforms = [
-  { logo: "/spotify.svg", label: "Spotify", hoverColor: "hover:border-[#1DB954]/40 hover:shadow-[#1DB954]/10" },
-  { logo: "/apple-music.svg", label: "Apple Music", hoverColor: "hover:border-[#FA243C]/40 hover:shadow-[#FA243C]/10" },
-  { logo: "/deezer.svg", label: "Deezer", hoverColor: "hover:border-[#A238FF]/40 hover:shadow-[#A238FF]/10" },
+  { logo: spotifySvg, label: "Spotify", hoverColor: "hover:border-[#1DB954]/40 hover:shadow-[#1DB954]/10" },
+  { logo: appleMusicSvg, label: "Apple Music", hoverColor: "hover:border-[#FA243C]/40 hover:shadow-[#FA243C]/10" },
+  { logo: deezerSvg, label: "Deezer", hoverColor: "hover:border-[#A238FF]/40 hover:shadow-[#A238FF]/10" },
 ];
 
 export default function Footer() {
@@ -56,7 +64,7 @@ export default function Footer() {
                     className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 transition-all hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10"
                   >
                     <Image
-                      src={socialLogos[social.platform] ?? "/instagram.svg"}
+                      src={socialLogos[social.platform] ?? instagramSvg}
                       alt={social.platform}
                       width={18}
                       height={18}

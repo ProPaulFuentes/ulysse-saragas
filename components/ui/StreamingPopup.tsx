@@ -6,24 +6,28 @@ import { motion } from "framer-motion";
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
 
+import spotifySvg from "@/public/spotify.svg";
+import appleMusicSvg from "@/public/apple-music.svg";
+import deezerSvg from "@/public/deezer.svg";
+
 const platformConfig = [
   {
     key: "spotify" as const,
     label: "Spotify",
     color: "bg-[#1DB954]",
-    logo: "/spotify.svg",
+    logo: spotifySvg,
   },
   {
     key: "appleMusic" as const,
     label: "Apple Music",
     color: "bg-[#FA243C]",
-    logo: "/apple-music.svg",
+    logo: appleMusicSvg,
   },
   {
     key: "deezer" as const,
     label: "Deezer",
     color: "bg-[#A238FF]",
-    logo: "/deezer.svg",
+    logo: deezerSvg,
   },
 ];
 
