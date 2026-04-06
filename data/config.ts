@@ -325,7 +325,7 @@ export const siteConfig = {
   socials: [
     { platform: "instagram", url: "https://instagram.com/ulyssesaragasmusic" },
     { platform: "tiktok", url: "https://tiktok.com/@ulyssesaragas" },
-    { platform: "youtube", url: "https://youtube.com/@ulyssesaragas" },
+    { platform: "youtube", url: "https://www.youtube.com/channel/UCrKAY-OOLB5zB8UMyv1bIaA" },
     { platform: "twitch", url: "https://twitch.tv/ulyssesaragas" },
     { platform: "spotify", url: "https://open.spotify.com/artist/0IHkcxD79oKnHexJ1D7fuQ" },
   ],
