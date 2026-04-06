@@ -1,12 +1,16 @@
 "use client";
 
 import { siteConfig } from "@/data/config";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import StreamingPopup from "@/components/ui/StreamingPopup";
+import { useState } from "react";
 
 export default function Hero() {
   const { artist } = siteConfig;
+  const [showPopup, setShowPopup] = useState(false);
+  const latestAlbum = siteConfig.albums[0];
 
   return (
     <header
@@ -59,8 +63,8 @@ export default function Hero() {
           {artist.tagline}
         </motion.p>
 
-        <motion.a
-          href={artist.latestSingleUrl}
+        <motion.button
+          onClick={() => setShowPopup(true)}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
@@ -70,7 +74,7 @@ export default function Hero() {
         >
           <Play size={18} fill="currentColor" />
           Écouter l&apos;EP
-        </motion.a>
+        </motion.button>
       </div>
 
       {/* Scroll indicator */}
@@ -88,6 +92,16 @@ export default function Hero() {
           <div className="h-2 w-full rounded-full bg-orange-500" />
         </motion.div>
       </motion.div>
+
+      {/* Streaming popup */}
+      <AnimatePresence>
+        {showPopup && (
+          <StreamingPopup
+            album={latestAlbum}
+            onClose={() => setShowPopup(false)}
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 }
