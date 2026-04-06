@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   images: {
+    unoptimized: true,
     remotePatterns: [
       { hostname: "i.scdn.co" },
       { hostname: "cdn-images.dzcdn.net" },
